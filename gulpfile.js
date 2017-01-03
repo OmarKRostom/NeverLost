@@ -15,5 +15,17 @@ require('laravel-elixir-vue-2');
 
 elixir((mix) => {
     mix.sass('app.scss')
-       .webpack('app.js');
+    	.styles([
+    		'bootstrap.min.css',
+    		'raleway.css',
+    		'../admin/css/AdminLTE.css',
+    		'../admin/css/font-awesome.min.css',
+    		'../admin/css/ionicons.min.css',
+    		'../admin/css/skins/_all-skins.css',
+    		'main-theme.css'
+    	])
+   		.webpack('app.js')
+   		.scripts([
+   			'../admin/js/app.js'
+   		]);
 });

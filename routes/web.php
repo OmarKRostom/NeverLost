@@ -15,4 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(['prefix' => 'dashboard'], function () {
+    Route::get('/home','manageData@viewHome');
+});
+
 Route::get('/createUser','manageUser@create');
