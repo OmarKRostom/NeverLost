@@ -16,7 +16,9 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'dashboard'], function () {
-    Route::get('/home','manageData@viewHome');
+    Route::get('/sites/home','manageData@viewHome'); //View all saved sites
+    Route::get('/sites/new','manageData@viewAddSite'); // View add site page
+    Route::post('/sites/addSite','manageData@addSite'); // Add site post request
 });
 
 Route::get('/createUser','manageUser@create');

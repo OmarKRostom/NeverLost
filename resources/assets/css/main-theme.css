@@ -1,0 +1,24 @@
+.widget {
+	height: 150px;
+	background-color: #bfbfbf;
+	border-radius: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.widget:hover {
+	background-color: #969696;
+}
+
+.marginer {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.nopadding {
+	padding : 0px !important;
+}
+
+select option[data-default] {
+  color: #888;
+}

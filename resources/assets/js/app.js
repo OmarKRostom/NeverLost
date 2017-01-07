@@ -6,6 +6,8 @@
  */
 
 require('./bootstrap');
+var CryptoJS = require("crypto-js");
+var axios = require('axios');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -13,8 +15,35 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-// Vue.component('example', require('./components/Example.vue'));
-
-// const app = new Vue({
-//     el: '#app'
-// });
+const app = new Vue({
+    el: '#app',
+    data : {
+    	site_username : "",
+    	site_password : "",
+    	site_provider : "",
+    	isPassShown : true
+    },
+    methods : {
+    	togglePassword : function() {
+    		this.isPassShown = (this.isPassShown) ? false : true;
+    	},
+    	clearAddSiteForm : function() {
+    		this.site_username = "";
+    		this.site_password = "";
+    		this.site_provider = "";
+    		this.isPassShown = true;
+    	},
+    	addSite : function() {
+            var self = this;
+			axios.post('/dashboard/sites/addSite',{
+				username : self.site_username,
+				password : self.site_password,
+				provider : self.site_provider
+			}).then(function (response) {
+			    
+			}).catch(function (error) {
+			    
+			});
+    	}
+    }
+});
