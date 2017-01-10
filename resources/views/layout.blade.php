@@ -6,11 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/all.css') }}">
+    <script type="text/javascript" src="{{ asset('js/AesUtil.js') }}"></script>
 
 	<script type="text/javascript">
 		window.NeverLost = {
 			csrf : '{{ csrf_token() }}',
-			isLogged : {{ auth()->user() ? 'true' : 'false' }}
+			isLogged : {{ auth()->user() ? 'true' : 'false' }},
+      user : '{{ Auth::user() }}',
+      passphrase : '{{ session('passphrase') }}',
+      authUser : '{{ session('authUser') }}'
 		}
 	</script>
 </head>
@@ -35,7 +39,7 @@
         <ul class="nav navbar-nav">
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
-            <a href="#" style="width:100%;"><i class="fa fa-sign-out"></i>Sign out</a>
+            <a href="/logout" style="width:100%;"><i class="fa fa-sign-out"></i>Sign out</a>
           </li>
         </ul>
       </div>

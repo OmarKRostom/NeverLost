@@ -1,0 +1,22 @@
+{
+    "name": "jenssegers/mongodb-session",
+    "description": "A MongoDB session driver for Laravel 4",
+    "keywords": ["laravel","session","mongodb","mongo","driver"],
+    "authors": [
+        {
+            "name": "Jens Segers",
+            "homepage": "http://jenssegers.be"
+        }
+    ],
+    "license" : "MIT",
+    "require": {
+        "php": ">=5.3.0",
+        "jenssegers/mongodb": "*",
+        "illuminate/session": "4.*|5.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Jenssegers\\Mongodb\\Session": "src/"
+        }
+    }
+}

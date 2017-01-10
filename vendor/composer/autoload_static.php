@@ -13,8 +13,8 @@ class ComposerStaticInite335f287e207985ea1090175873915a8
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
-        'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
         '3a37ebac017bc098e9a86b35401e7a68' => __DIR__ . '/..' . '/mongodb/mongodb/src/functions.php',
+        'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
     );
@@ -258,6 +258,10 @@ class ComposerStaticInite335f287e207985ea1090175873915a8
         ),
         'J' => 
         array (
+            'Jenssegers\\Mongodb\\Session' => 
+            array (
+                0 => __DIR__ . '/..' . '/jenssegers/mongodb-session/src',
+            ),
             'Jenssegers\\Mongodb' => 
             array (
                 0 => __DIR__ . '/..' . '/jenssegers/mongodb/src',
@@ -293,7 +297,6 @@ class ComposerStaticInite335f287e207985ea1090175873915a8
 
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
-        'App\\Data' => __DIR__ . '/../..' . '/app/Data.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
@@ -307,12 +310,14 @@ class ComposerStaticInite335f287e207985ea1090175873915a8
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Login' => __DIR__ . '/../..' . '/app/Login.php',
+        'App\\Provider' => __DIR__ . '/../..' . '/app/Provider.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\Salt' => __DIR__ . '/../..' . '/app/Salt.php',
+        'App\\Site' => __DIR__ . '/../..' . '/app/Site.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
@@ -1502,6 +1507,8 @@ class ComposerStaticInite335f287e207985ea1090175873915a8
         'Jenssegers\\Mongodb\\Schema\\Blueprint' => __DIR__ . '/..' . '/jenssegers/mongodb/src/Jenssegers/Mongodb/Schema/Blueprint.php',
         'Jenssegers\\Mongodb\\Schema\\Builder' => __DIR__ . '/..' . '/jenssegers/mongodb/src/Jenssegers/Mongodb/Schema/Builder.php',
         'Jenssegers\\Mongodb\\Schema\\Grammar' => __DIR__ . '/..' . '/jenssegers/mongodb/src/Jenssegers/Mongodb/Schema/Grammar.php',
+        'Jenssegers\\Mongodb\\Session\\SessionManager' => __DIR__ . '/..' . '/jenssegers/mongodb-session/src/Jenssegers/Mongodb/Session/SessionManager.php',
+        'Jenssegers\\Mongodb\\Session\\SessionServiceProvider' => __DIR__ . '/..' . '/jenssegers/mongodb-session/src/Jenssegers/Mongodb/Session/SessionServiceProvider.php',
         'League\\Flysystem\\AdapterInterface' => __DIR__ . '/..' . '/league/flysystem/src/AdapterInterface.php',
         'League\\Flysystem\\Adapter\\AbstractAdapter' => __DIR__ . '/..' . '/league/flysystem/src/Adapter/AbstractAdapter.php',
         'League\\Flysystem\\Adapter\\AbstractFtpAdapter' => __DIR__ . '/..' . '/league/flysystem/src/Adapter/AbstractFtpAdapter.php',

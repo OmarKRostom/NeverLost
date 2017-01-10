@@ -26,6 +26,8 @@ elixir((mix) => {
     	])
    		.webpack('app.js')
    		.scripts([
-   			'../admin/js/app.js'
+   			'../admin/js/app.js',
+        'aes_new.js',
+        'pbkdf2_new.js'
    		]);
 });

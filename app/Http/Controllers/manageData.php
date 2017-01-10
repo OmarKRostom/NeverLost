@@ -17,10 +17,25 @@ class manageData extends Controller
     }
 
     public function addSite(Request $request) {
-    	$site = new Site;
-    	$site->username = $request->username;
-    	$site->password = $request->password;
-    	$site->provider = $request->provider;
-    	$site->save();
+        return $request->all();
+    	// $site = new Site;
+    	// $site->username = $request->username;
+    	// $site->password = $request->password;
+    	// $site->provider = $request->provider;
+    	// $site->iv = $request->iv;
+    	// $site->salt = $request->salt;
+    	// $site->save();
+    }
+
+    public function getSites() {
+    	return Site::all();
+    }
+
+    public function viewModifySite($id) {
+    	return view('modifySite')->with('providers',Provider::all());
+    }
+
+    public function modifySite(Request $request) {
+
     }
 }

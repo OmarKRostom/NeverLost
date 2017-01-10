@@ -2,11 +2,11 @@
 
 @section('content')
 	<h2>
-		Add a site
+		Modify stored site
 		<br>
 		<small style="font-size: 12px;">Enter username and password for your favourite provider.</small>
 	</h2>
-	<form class="col-xs-8 col-xs-offset-2" id="addsite">
+	<form class="col-xs-8 col-xs-offset-2" id="modifysite">
 		<div class="form-group">
 			<div class="input-group marginer">
 				<div class="input-group-addon">Username</div>
@@ -25,7 +25,7 @@
       			<input v-model="site_provider" type="text" class="form-control" placeholder="Enter provider's url">
 			</div>
 			<div class="btn-group col-xs-12 nopadding">
-				<button type="button" @click="addProvider" class="btn btn-success col-xs-8">Save</button>
+				<button type="button" @click="modifyProvider" class="btn btn-success col-xs-8">Save</button>
 				<button class="btn btn-danger col-xs-4">Clear</button>
 			</div>
 		</div>	

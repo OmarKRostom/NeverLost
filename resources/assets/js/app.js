@@ -21,9 +21,26 @@ const app = new Vue({
     	site_username : "",
     	site_password : "",
     	site_provider : "",
-    	isPassShown : true
-    },
-    methods : {
+    	isPassShown : true,
+        login_username: "",
+        login_password: "",
+        register_username : "",
+        register_password : "",
+        sites : {},
+        providers : [],
+        providers_infos : []
+    }, mounted : function() {
+        var aesutil = new AesUtil;
+        var self = this;
+        axios.get('/dashboard/sites/getSites')
+        .then(function (response){
+            for (var i=0;i<response.data.length;i++) {
+                self.providers = aesutil.decrypt(response.data[i].salt, response.data[i].iv, NeverLost.passphrase, response.data[i].data);
+            }
+        }).then(function (error){
+
+        });
+    }, methods : {
     	togglePassword : function() {
     		this.isPassShown = (this.isPassShown) ? false : true;
     	},
@@ -33,17 +50,54 @@ const app = new Vue({
     		this.site_provider = "";
     		this.isPassShown = true;
     	},
-    	addSite : function() {
+    	addProvider : function() {
             var self = this;
-			axios.post('/dashboard/sites/addSite',{
-				username : self.site_username,
-				password : self.site_password,
-				provider : self.site_provider
-			}).then(function (response) {
-			    
-			}).catch(function (error) {
-			    
-			});
-    	}
+            //INSERT TO PROVIDERS ARRAY
+            this.providers.push({
+                username : this.site_username,
+                provider : this.site_provider,
+                password : this.site_password
+            });
+            
+            // this.providers.push(providers_infos);
+            // console.log(JSON.stringify(this.providers));
+            // //SUBMIT SITES OBJECT TO DATA REQUESTS
+            // var request = {};
+            // var aesutil = new AesUtil;
+            // request.iv = aesutil.generateRandom();
+            // request.salt = aesutil.generateRandom();
+            // request.data = aesutil.encrypt(request.salt, request.iv, NeverLost.passphrase, JSON.stringify(this.providers));
+            // console.log(request);
+    	   
+
+
+        },
+        modifyProvider : function() {
+            var self = this;
+            var aesutil = new AesUtil;
+            var indexOfProvider = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);  
+        },
+        register : function() {
+            var self = this;
+            axios.post('/register',{
+                username : self.register_username,
+                password : self.register_password
+            }).then(function (response){
+                window.location = "/dashboard/sites/home";
+            }).then(function (error){
+
+            });
+        },
+        login : function() {
+            var self = this;
+            axios.post('/login',{
+                username : self.login_username,
+                password : self.login_password
+            }).then(function (response){
+                window.location = "/dashboard/sites/home";
+            }).catch(function (error){
+
+            });
+        }
     }
 });

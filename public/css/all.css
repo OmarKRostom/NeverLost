@@ -6741,8 +6741,7 @@ table.text-center th {
 	height: 150px;
 	background-color: #bfbfbf;
 	border-radius: 5px;
-	margin-top: 10px;
-	margin-bottom: 10px;
+	margin: 20px;
 }
 
 .widget:hover {

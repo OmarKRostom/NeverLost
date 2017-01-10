@@ -7,5 +7,5 @@ use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 class Site extends Eloquent
 {
     protected $connection = 'mongodb';
-    protected $collection = 'sties_collection';
+    protected $collection = 'sites_collection';
 }
